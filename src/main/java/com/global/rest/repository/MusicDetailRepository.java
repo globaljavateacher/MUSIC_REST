@@ -1,0 +1,17 @@
+package com.global.rest.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.global.rest.entity.MusicDetail;
+
+@Repository
+public interface MusicDetailRepository extends JpaRepository<MusicDetail, Long> {
+	
+	@Modifying
+	@Query("DELETE FROM MusicDetail md WHERE md.music.musicNo = :musicNo")
+	void deleteByMusicNo(@Param("musicNo") Long musicNo);
+}

@@ -1,0 +1,81 @@
+2026-03-01 04:53:07.872 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-03-01 04:53:07.897 [main] INFO  com.global.rest.MusicApiApplication - Starting MusicApiApplication using Java 21.0.9 with PID 15684 (C:\workspace_sts\MUSIC_REST\bin\main started by USER in C:\workspace_sts\MUSIC_REST)
+2026-03-01 04:53:07.898 [main] INFO  com.global.rest.MusicApiApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-01 04:53:08.388 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-01 04:53:08.424 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2026-03-01 04:53:08.822 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-01 04:53:08.829 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-01 04:53:08.831 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-01 04:53:08.832 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-03-01 04:53:08.871 [main] INFO  o.a.c.c.C.[.[.[/MUSIC_REST] - Initializing Spring embedded WebApplicationContext
+2026-03-01 04:53:08.871 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 944 ms
+2026-03-01 04:53:08.988 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-01 04:53:09.020 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-03-01 04:53:09.043 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-01 04:53:09.230 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-01 04:53:09.248 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-01 04:53:09.251 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2026-03-01 04:53:09.514 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6eb00cbe
+2026-03-01 04:53:09.515 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-01 04:53:09.602 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-01 04:53:10.244 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-01 04:53:10.246 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-01 04:53:10.388 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-01 04:53:11.016 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-01 04:53:11.031 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/MUSIC_REST'
+2026-03-01 04:53:11.036 [main] INFO  com.global.rest.MusicApiApplication - Started MusicApiApplication in 3.378 seconds (process running for 3.917)
+2026-03-01 04:53:16.319 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/MUSIC_REST] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-01 04:53:16.319 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-01 04:53:16.321 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-01 04:53:16.596 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 173 ms
+2026-03-01 04:53:49.984 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.music_no,
+        m1_0.create_date,
+        md1_0.music_detail_no,
+        md1_0.create_date,
+        md1_0.release_comp,
+        md1_0.release_date,
+        m1_0.title,
+        m1_0.vocal 
+    from
+        music.music m1_0 
+    join
+        music.music_detail md1_0 
+            on m1_0.music_no=md1_0.music_no 
+    order by
+        m1_0.create_date desc
+2026-03-01 04:54:22.780 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.music_no,
+        m1_0.create_date,
+        md1_0.music_detail_no,
+        md1_0.create_date,
+        md1_0.release_comp,
+        md1_0.release_date,
+        m1_0.title,
+        m1_0.vocal 
+    from
+        music.music m1_0 
+    join
+        music.music_detail md1_0 
+            on m1_0.music_no=md1_0.music_no 
+    where
+        m1_0.music_no=?
+2026-03-01 04:54:22.808 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        music.music_detail md1_0 
+    where
+        md1_0.music_no=?
+2026-03-01 04:54:22.840 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        music.music 
+    where
+        music_no=?
+2026-03-01 04:54:56.218 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-03-01 04:54:56.219 [RMI TCP Connection(11)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-03-01 04:54:56.227 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-01 04:54:56.228 [RMI TCP Connection(11)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-01 04:54:56.231 [RMI TCP Connection(11)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
