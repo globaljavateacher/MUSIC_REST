@@ -23,7 +23,7 @@ public class SwaggerConfig {
     private String contextPath;
 
     @Bean
-    public OpenAPI openAPI() {
+    OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
                         .title("MUSIC REST API")

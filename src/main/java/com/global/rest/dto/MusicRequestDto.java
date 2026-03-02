@@ -37,6 +37,6 @@ public class MusicRequestDto {
     private String releaseComp;
 
     @JsonFormat(pattern = "yyyy.MM.dd")
-    @Schema(type = "string", description = "발매일", example = "2026.03.01", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(type = "string", description = "발매일", example = "2026.04.01", requiredMode = Schema.RequiredMode.REQUIRED)
     private LocalDate releaseDate;
 }

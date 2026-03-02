@@ -19,7 +19,7 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
 	
 	Page<Music> getMusicList(
 			@Param("title") String title
-			,@Param("vocal") String vocal
-			,Pageable pageable);
+			, @Param("vocal") String vocal
+			, Pageable pageable);
 
 }

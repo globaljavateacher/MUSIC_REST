@@ -11,5 +11,5 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class MusicDetailService {
-
+	
 }

@@ -36,23 +36,26 @@ public class MusicService {
     	
     	Page<Music> musicPage = musicRepository.getMusicList(
     			requestDto.getTitle()
-    			,requestDto.getVocal()
-    			,pageable);
+    			, requestDto.getVocal()
+    			, pageable);
 
     	return musicPage.getContent().stream()
                 .map(music -> {
+                    Long musicDetailNo = (music.getMusicDetail() != null) 
+                                         ? music.getMusicDetail().getMusicDetailNo() : null;
                     String releaseComp = (music.getMusicDetail() != null) 
-                                         ? music.getMusicDetail().getReleaseComp() : "정보 없음";
+                    		? music.getMusicDetail().getReleaseComp() : "정보 없음";
                     LocalDate releaseDate = (music.getMusicDetail() != null) 
                                          ? music.getMusicDetail().getReleaseDate() : null;
 
                     return new MusicResponseDto(
-                        music.getMusicNo(),
-                        music.getTitle(),
-                        music.getVocal(),
-                        releaseComp,
-                        releaseDate,
-                        music.getCreateDate()
+                        music.getMusicNo()
+                        , music.getTitle()
+                        , music.getVocal()
+                        , musicDetailNo
+                        , releaseComp
+                        , releaseDate
+                        , music.getCreateDate()
                     );
                 })
                 .collect(Collectors.toList());
@@ -77,12 +80,13 @@ public class MusicService {
         MusicDetail savedMusicDetail = musicDetailRepository.save(detail);
         
         return new MusicResponseDto(
-                savedMusic.getMusicNo(),
-                savedMusic.getTitle(),
-                savedMusic.getVocal(),
-                savedMusicDetail.getReleaseComp(),                
-                savedMusicDetail.getReleaseDate(),
-                savedMusic.getCreateDate()
+                savedMusic.getMusicNo()
+                , savedMusic.getTitle()
+                , savedMusic.getVocal()
+                , savedMusicDetail.getMusicDetailNo()
+                , savedMusicDetail.getReleaseComp()
+                , savedMusicDetail.getReleaseDate()
+                , savedMusic.getCreateDate()
             );
     }
 

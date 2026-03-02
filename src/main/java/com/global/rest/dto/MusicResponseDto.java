@@ -28,6 +28,9 @@ public class MusicResponseDto {
 
     @Schema(description = "가수명", example = "BTS")
     private String vocal;
+    
+    @Schema(description = "음악 상세 번호", example = "1")
+    private Long musicDetailNo;
 
     @Schema(description = "발매사", example = "HYBE")
     private String releaseComp;
@@ -37,6 +40,6 @@ public class MusicResponseDto {
     private LocalDate releaseDate;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    @Schema(description = "등록일", example = "2026.03.01")
+    @Schema(type = "string", description = "등록일", example = "2026.03.01 12:50")
     private LocalDateTime createDate;
 }

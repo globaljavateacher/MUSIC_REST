@@ -11,5 +11,5 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/music-detail")
 @RequiredArgsConstructor
 public class MusicDetailController {
-
+	
 }
